@@ -8,9 +8,9 @@ Web para estudiar el **examen teórico del permiso B de la DGT** de forma sencil
 
 | Sección | Qué hace |
 |---|---|
-| **Aprender** | Una ruta de 10 unidades. Cada una tiene lecciones cortas, simuladores, una práctica de 10 preguntas con estrellas y un control final. Cada lección empieza con un resumen de 30 segundos y tiene botón para escucharla en voz alta. |
+| **Aprender** | Todo el temario oficial (las 16 materias del Anexo V del RD 818/2009) en 11 temas y 85 lecciones cortas, con índice lateral, buscador y lectura continua. Cada lección empieza con un resumen de 30 segundos, incluye diagramas para memorizar (mapas mentales, árboles de decisión, escalas…) y se puede escuchar en voz alta. Cada tema termina con una práctica y un control. |
 | **Simuladores** | 8 simuladores guiados en tres pasos: *Entiende → Experimenta → Demuéstralo*. Cubren la distancia de frenada, la regla de los 2 segundos, el semáforo, la glorieta, el alcohol, las luces, cómo adelantar a un ciclista y la conducta PAS. Tienen misiones que se marcan solas, un narrador que explica lo que pasa y un reto final de hasta 3 estrellas. |
-| **Practicar** | Repaso espaciado: cada pregunta vuelve a los 1, 3, 7, 16 y 35 días según la vayas acertando. También hay tests personalizados, 150 tarjetas de memoria y una galería de señales. |
+| **Practicar** | Repaso espaciado: cada pregunta vuelve a los 1, 3, 7, 16 y 35 días según la vayas acertando. También hay tests personalizados, 235 tarjetas de memoria, modos supervivencia y contrarreloj, y una galería de señales. |
 | **Exámenes** | Simulacro de 30 preguntas en 30 minutos, que es APTO con 3 fallos como máximo. Además, **27 tests oficiales de la Revista DGT (2020-2026)** ordenados por mes, con modo examen y modo práctica. |
 | **Preparación** | Probabilidad real de aprobar, calculada con tu acierto reciente («aprobarías 7 de cada 10»). Muestra también el dominio por tema, un calendario de actividad, tu evolución en los exámenes, las preguntas que más se te resisten y los logros. |
 | **Guía CV** | Jefaturas de tráfico, pasos, costes y enlaces oficiales. |
@@ -21,7 +21,7 @@ Web para estudiar el **examen teórico del permiso B de la DGT** de forma sencil
 - 3 misiones al día.
 - Estrellas en la ruta y logros con barra de progreso.
 
-En total hay **más de 650 preguntas**. Son 555 propias de práctica más los tests oficiales (habrá algunas más cuando termine el último bloque). La web funciona sin conexión, se puede instalar en el móvil (PWA) y tiene modo claro y oscuro.
+En total hay **1.145 preguntas**, 235 tarjetas y 156 diagramas. La web funciona sin conexión, se puede instalar en el móvil (PWA) y tiene modo claro y oscuro.
 
 ## Usarla en local
 

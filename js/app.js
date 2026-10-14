@@ -17,6 +17,8 @@
     { id: "accidentes", titulo: "Accidentes y eficiencia", color: "#8c3b3b" },
     { id: "normas", titulo: "Normas y sanciones", color: "#5b6b7f" }
   ];
+  // Un tema puede llegar repartido en varios ficheros: se unen sus lecciones
+  if (window.TEMARIO) window.TEMARIO = window.TEMARIO.reduce((acc, t) => { const ya = acc.find(x => x.id === t.id); if (ya) ya.lecciones = ya.lecciones.concat((t.lecciones || []).filter(l => !ya.lecciones.some(y => y.id === l.id))); else acc.push(t); return acc; }, []);
   // Lecciones de ampliación: se insertan en su tema tras la lección indicada
   (window.AMPLIACION || []).forEach(x => {
     const t = (window.TEMARIO || []).find(tt => tt.id === x.tema); if (!t || !x.leccion || t.lecciones.some(l => l.id === x.leccion.id)) return;
