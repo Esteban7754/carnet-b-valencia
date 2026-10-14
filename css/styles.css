@@ -170,7 +170,7 @@ main { min-height: calc(100vh - 140px); outline: none; }
 @keyframes tla { 0%,40% { fill: #4a4d55; } 41%,52% { fill: #f2b425; } 53%,100% { fill: #4a4d55; } }
 @keyframes tlv { 0%,52% { fill: #4a4d55; } 53%,100% { fill: #34a56a; } }
 .sun-glow { animation: glow 5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
-@keyframes glow { 50% { transform: scale(1.08); opacity: .85; } }
+@keyframes glow { 50% { transform: scale(1.05); opacity: .85; } }
 .hero-stats { display: flex; gap: 26px; margin-top: 26px; flex-wrap: wrap; }
 .hero-stats div b { display: block; font-family: var(--display); font-size: 1.9rem; font-weight: 800; line-height: 1; color: var(--text); }
 .hero-stats div span { font-size: .82rem; color: var(--muted); font-weight: 600; }
@@ -241,7 +241,7 @@ main { min-height: calc(100vh - 140px); outline: none; }
 .lesson ul { padding-left: 0; list-style: none; margin: 0 0 1.2em; }
 .lesson ul li { position: relative; padding-left: 26px; margin-bottom: 8px; }
 .lesson ul li::before { content: ""; position: absolute; left: 6px; top: .62em; width: 8px; height: 8px; border-radius: 2px; background: var(--c, var(--primary)); transform: rotate(45deg); }
-.lesson > .rv { opacity: 0; transform: translateY(16px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+.lesson > .rv { opacity: 0; transform: translateY(8px); transition: opacity .45s var(--ease), transform .45s var(--ease); }
 .lesson > .rv.in { opacity: 1; transform: none; }
 .box { border-radius: 16px; padding: 16px 18px 16px 56px; margin: 0 0 1.2em; position: relative; border: 1px solid transparent; }
 .box .bx-ic { position: absolute; left: 16px; top: 15px; width: 26px; height: 26px; border-radius: 8px; display: grid; place-items: center; }
@@ -349,7 +349,7 @@ tr:last-child td { border-bottom: 0; }
 
 /* ---------- Señales ---------- */
 .sign-card { perspective: 900px; cursor: pointer; }
-.flip { position: relative; height: 230px; transform-style: preserve-3d; transition: transform .7s var(--spring); }
+.flip { position: relative; height: 230px; transform-style: preserve-3d; transition: transform .6s cubic-bezier(.25,.8,.25,1); }
 .sign-card.flipped .flip { transform: rotateY(180deg); }
 .flip > div { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; gap: 10px; }
 .flip .back { transform: rotateY(180deg); text-align: left; justify-content: flex-start; overflow: auto; font-size: .9rem; color: var(--text-2); background: var(--surface-2); }
@@ -360,7 +360,7 @@ tr:last-child td { border-bottom: 0; }
 
 /* ---------- Tarjetas ---------- */
 .fc-stage { position: relative; max-width: 540px; margin: 0 auto; height: 330px; perspective: 1400px; }
-.fc { position: absolute; inset: 0; cursor: pointer; transform-style: preserve-3d; transition: transform .7s var(--spring); }
+.fc { position: absolute; inset: 0; cursor: pointer; transform-style: preserve-3d; transition: transform .6s cubic-bezier(.25,.8,.25,1); }
 .fc.flipped { transform: rotateY(180deg); }
 .fc.out-left { transition: transform .45s ease-in, opacity .45s; transform: translateX(-130%) rotate(-18deg); opacity: 0; }
 .fc.out-right { transition: transform .45s ease-in, opacity .45s; transform: translateX(130%) rotate(18deg); opacity: 0; }
@@ -517,10 +517,10 @@ input[type=range]::-moz-range-thumb { width: 20px; height: 20px; border-radius: 
 .page-head p { color: var(--text-2); max-width: 680px; font-size: 1.05rem; }
 .progress { height: 8px; background: var(--surface-3); border-radius: 99px; overflow: hidden; }
 .progress > i { display: block; height: 100%; width: 0; background: var(--c, var(--primary)); border-radius: 99px; transition: width 1.1s var(--ease); }
-.reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity .55s var(--ease), transform .55s var(--ease); }
 .reveal.in { opacity: 1; transform: none; }
-.page-enter { animation: pageIn .5s var(--ease) both; }
-@keyframes pageIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.page-enter { animation: pageIn .32s var(--ease) both; }
+@keyframes pageIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 ::view-transition-old(root) { animation: vtOut .22s ease both; }
 ::view-transition-new(root) { animation: vtIn .35s var(--ease) both; }
 @keyframes vtOut { to { opacity: 0; transform: translateY(-6px); } }

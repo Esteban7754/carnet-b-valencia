@@ -16,8 +16,8 @@
 @keyframes unblur { from { filter: blur(6px); opacity: .5; } to { filter: none; opacity: 1; } }
 .dg-body { position: relative; }
 /* entrada escalonada al aparecer */
-.dg [style*="--i"] { opacity: 0; transform: translateY(12px); transition: opacity .55s var(--ease), transform .6s var(--spring); transition-delay: calc(var(--i) * 90ms + 120ms); }
-.dg.in [style*="--i"] { opacity: 1; transform: none; }
+.dg [style*="--i"]:not(path) { opacity: 0; transform: translateY(10px); transition: opacity .55s var(--ease), transform .6s var(--spring); transition-delay: calc(var(--i) * 90ms + 120ms); }
+.dg.in [style*="--i"]:not(path) { opacity: 1; transform: none; }
 .dg .mm-rama[style*="--i"] { transform: translate(-50%, -50%) scale(.85); }
 .dg.in .mm-rama[style*="--i"] { transform: translate(-50%, -50%); }
 .dg .cy-n[style*="--i"] { transform: translate(-50%, -50%) scale(.8); }

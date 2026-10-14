@@ -338,8 +338,8 @@
     const farola = x => `<g transform="translate(${x},0)"><rect x="-1.5" y="232" width="3" height="70" fill="#8a8f97"/><path d="M0 234q0-6 10-6h6" fill="none" stroke="#8a8f97" stroke-width="3"/><rect x="13" y="226" width="9" height="4" rx="2" fill="#f7e2a8"/></g>`;
     const semaf = x => `<g transform="translate(${x},0)"><rect x="-1.5" y="250" width="3" height="52" fill="#4a4d55"/><rect x="-8" y="214" width="16" height="40" rx="5" fill="#2a2d33"/><circle class="tl-r" cx="0" cy="223" r="4.2"/><circle class="tl-a" cx="0" cy="234" r="4.2"/><circle class="tl-v" cx="0" cy="245" r="4.2"/></g>`;
     const capa3 = [senal(40, svgSenal("circulo-rojo", "50").replace(/<\/?svg[^>]*>/g, "")), farola(150), arbol(210), semaf(300), senal(400, svgSenal("triangulo", "🚸").replace(/<\/?svg[^>]*>/g, "")), arbol(460)].join("");
-    const colinas = `<path d="M0 230 Q60 180 130 205 T260 190 T390 200 T500 190 V300 H0Z" style="fill:var(--hill1)"/>`;
-    const colinas2 = `<path d="M0 255 Q80 215 170 240 T330 232 T500 238 V300 H0Z" style="fill:var(--hill2)"/>${[30, 90, 260, 330, 430].map(x => `<g transform="translate(${x},${-6})"><rect x="-1.5" y="238" width="3" height="12" fill="#6d5a45"/><circle cy="234" r="8" style="fill:var(--tree)"/></g>`).join("")}`;
+    const colinas = `<path d="M0 212 C60 180 100 196 150 204 S260 182 320 196 S440 214 500 212 V300 H0Z" style="fill:var(--hill1)"/>`;
+    const colinas2 = `<path d="M0 246 C70 222 120 236 180 242 S300 226 360 236 S460 250 500 246 V300 H0Z" style="fill:var(--hill2)"/>${[30, 90, 260, 330, 430].map(x => `<g transform="translate(${x},${-6})"><rect x="-1.5" y="238" width="3" height="12" fill="#6d5a45"/><circle cy="234" r="8" style="fill:var(--tree)"/></g>`).join("")}`;
     return `<svg viewBox="0 0 500 400" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
       <defs><linearGradient id="h-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--sky1)"/><stop offset="1" style="stop-color:var(--sky2)"/></linearGradient></defs>
       <rect width="500" height="400" fill="url(#h-sky)"/>
@@ -492,6 +492,7 @@
     </nav>`;
   }
   // Envuelve la vista actual en el lector: índice lateral + buscador + contenido
+  let scrollIndice = null;
   function envolver(actual) {
     const main = document.createElement("div"); main.className = "la-main";
     while (app.firstChild) main.appendChild(app.firstChild);
@@ -510,7 +511,10 @@
       if (r) res.innerHTML = r.length ? `<p class="la-rn">${r.length} resultado${r.length === 1 ? "" : "s"}</p>` + r.map(({ e, snip }) => `<a class="la-hit" href="#/leccion/${e.t}/${e.l.id}" style="--c:${tema(e.t).color}"><b>${esc(e.titulo)}</b><small class="la-ht">${esc(tema(e.t).titulo)}</small>${snip ? `<span>${snip}</span>` : ""}</a>`).join("") : `<p class="la-rn">Sin resultados para «${esc(q.value)}».</p>`;
     }, 120); });
     q.addEventListener("keydown", e => { if (e.key === "Escape") { q.value = ""; q.dispatchEvent(new Event("input")); q.blur(); } if (e.key === "Enter") { const h = $(".la-hit", res); if (h) location.hash = h.getAttribute("href"); } });
-    const cur = $(".la-l.cur, .la-top-link.cur", side); if (cur) requestAnimationFrame(() => cur.scrollIntoView({ block: "center" }));
+    const cur = $(".la-l.cur, .la-top-link.cur", side);
+    if (scrollIndice != null) side.scrollTop = scrollIndice;
+    if (cur) { const r = cur.getBoundingClientRect(), rs = side.getBoundingClientRect(); if (scrollIndice == null || r.top < rs.top + 60 || r.bottom > rs.bottom - 20) side.scrollTop += r.top - rs.top - rs.height / 3; }
+    la.classList.toggle("la-suave", scrollIndice != null);
     return la;
   }
   document.addEventListener("keydown", e => { if (e.key === "/" && !/input|textarea/i.test(e.target.tagName)) { const q = $("#la-q"); if (q) { e.preventDefault(); const la = q.closest(".la"); if (la) la.classList.add("open"); q.focus(); } } });
@@ -1388,11 +1392,12 @@
     if (cleanup) { cleanup(); cleanup = null; }
     teclas = null;
     cerrarMenu(); document.body.classList.remove("en-examen");
+    const side = $(".la-side"); scrollIndice = side ? side.scrollTop : null;
+    window.scrollTo(0, 0);
     const parts = location.hash.replace(/^#\/?/, "").split("#")[0].split("/").filter(Boolean);
     const def = RUTAS[parts[0] || ""];
     const render = () => { if (def) { marcarActivo(def[1]); def[0](parts); } else { marcarActivo(""); vistaNoEncontrado(); } app.focus({ preventScroll: true }); };
-    window.scrollTo(0, 0);
-    if (document.startViewTransition && !matchMedia("(prefers-reduced-motion: reduce)").matches) { try { const vt = document.startViewTransition(render); [vt.ready, vt.finished, vt.updateCallbackDone].forEach(p => p && p.catch(() => {})); } catch (e) { render(); } } else render();
+    render();
   }
 
   // Tema claro/oscuro

@@ -100,3 +100,7 @@ mark { background: color-mix(in srgb, var(--primary) 28%, transparent); color: i
   .les-bar { margin: 0 -16px 16px; padding: 8px 16px; }
 }
 @media (max-width: 600px) { .les-t { max-width: 38%; } .les-dots { min-width: 80px; } }
+
+/* Al pasar de lección en lección el índice no parpadea: solo entra el contenido */
+.la-suave .la-side { animation: none; }
+.la-main > .wrap.page-enter { animation-duration: .28s; }
