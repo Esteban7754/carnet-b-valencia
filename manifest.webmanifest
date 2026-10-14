@@ -1,0 +1,14 @@
+{
+  "name": "Carnet B Valencia",
+  "short_name": "Carnet B",
+  "description": "Aprende el teórico del permiso B de la DGT: temario, simuladores, tests y simulacros.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d111c",
+  "theme_color": "#2b59ff",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
