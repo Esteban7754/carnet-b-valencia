@@ -128,7 +128,7 @@ window.TEMARIO.push({
         ] },
         { tipo: "clave", texto: "**Colores de los testigos**: **rojo** = peligro o parada inmediata; **amarillo o naranja** = atención o avería, revisar pronto; **verde o azul** = solo informan (luces de cruce, intermitentes, etc.)." },
         { tipo: "aviso", texto: "Trampa: si el **testigo rojo de presión de aceite** se enciende en marcha, **no sigas hasta el destino**. Para el coche en cuanto sea seguro y apaga el motor. Sin aceite, el motor puede dañarse en muy poco tiempo." },
-        { tipo: "p", texto: "**Carga**: debe ir bien sujeta y no puede poner en peligro a nadie. Si sobresale por detrás, hay que señalizarla con una **bandera roja** de día o una **luz roja** de noche." },
+        { tipo: "p", texto: "**Carga**: debe ir bien sujeta y no puede poner en peligro a nadie. Si sobresale por detrás, hay que señalizarla con el panel **V-20** (franjas rojas y blancas) y, de noche o con poca visibilidad, además con una **luz roja**." },
         { tipo: "truco", texto: "Las cargas pesadas van **abajo** y **cerca del centro** del vehículo. Así el coche sigue estable y con buen agarre." },
         { tipo: "lista", items: [
             "El número de ocupantes **no puede superar las plazas autorizadas**, que figuran en la ficha técnica (tarjeta ITV).",

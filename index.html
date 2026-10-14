@@ -2,56 +2,65 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Carnet B Valencia</title>
-  <meta name="description" content="Aprende el teórico del permiso B de forma sencilla: temario animado, simuladores interactivos, tests por tema, simulacros de examen DGT y guía para la Comunitat Valenciana.">
-  <meta name="theme-color" content="#2b59ff">
-  <meta property="og:title" content="Carnet B Valencia — Aprende el teórico de la DGT">
-  <meta property="og:description" content="Temario fácil, simuladores animados, 355 preguntas tipo test y simulacros de examen.">
+  <meta name="description" content="Aprende el teórico del permiso B de la DGT de forma sencilla: ruta guiada, simuladores interactivos, repaso inteligente, tests oficiales de la DGT y simulacros de examen.">
+  <meta name="theme-color" content="#f5f1ea" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111315" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Carnet B Valencia: aprende el teórico de la DGT">
+  <meta property="og:description" content="Ruta guiada, simuladores, repaso inteligente, tests oficiales de la DGT y simulacros.">
   <meta property="og:type" content="website">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/extra.css">
+  <link rel="stylesheet" href="css/diagramas.css">
+  <link rel="stylesheet" href="css/aprender.css">
+  <link rel="stylesheet" href="css/practicar.css">
 </head>
 <body>
   <header class="topbar">
     <a href="#/" class="brand" aria-label="Inicio">
       <span class="brand-logo">B</span>
-      <span class="brand-text">Carnet<strong>B</strong> <small>Comunitat Valenciana</small></span>
+      <span class="brand-text">Carnet B <small>Comunitat Valenciana</small></span>
     </a>
-    <nav class="nav" id="nav">
-      <a href="#/" data-route="">Inicio</a>
-      <a href="#/temario" data-route="temario">Temario</a>
-      <a href="#/simuladores" data-route="simuladores">Simuladores</a>
-      <a href="#/tarjetas" data-route="tarjetas">Tarjetas</a>
-      <a href="#/test" data-route="test">Tests</a>
-      <a href="#/examen" data-route="examen">Simulacro</a>
-      <a href="#/senales" data-route="senales">Señales</a>
-      <a href="#/fallos" data-route="fallos">Fallos <span class="badge" id="badge-fallos" hidden></span></a>
-      <a href="#/valencia" data-route="valencia">Guía CV</a>
-      <a href="#/progreso" data-route="progreso">Progreso</a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#/" data-route="" data-ic="home">Inicio</a>
+      <a href="#/aprender" data-route="aprender" data-ic="route">Aprender</a>
+      <a href="#/simuladores" data-route="simuladores" data-ic="sliders">Simuladores</a>
+      <a href="#/practicar" data-route="practicar" data-ic="target">Practicar <span class="badge" id="badge-rep" hidden></span></a>
+      <a href="#/examenes" data-route="examenes" data-ic="flag">Exámenes</a>
+      <a href="#/progreso" data-route="progreso" data-ic="chart">Preparación</a>
+      <a href="#/valencia" data-route="valencia" data-ic="mapPin">Guía CV</a>
     </nav>
     <div class="topbar-actions">
-      <a href="#/progreso" class="xp-chip" id="xp-chip" title="Tu nivel"></a>
-      <button class="icon-btn" id="theme-toggle" title="Cambiar tema" aria-label="Cambiar tema claro/oscuro">🌙</button>
-      <button class="icon-btn menu-btn" id="menu-toggle" aria-label="Menú">☰</button>
+      <a href="#/progreso" class="streak-chip" id="streak-chip" aria-label="Racha y meta diaria"></a>
+      <button class="icon-btn" id="theme-toggle" title="Cambiar tema" aria-label="Cambiar tema claro u oscuro"></button>
+      <button class="avatar-btn" id="avatar-btn" aria-label="Tu cuenta" aria-haspopup="menu"></button>
     </div>
   </header>
 
   <main id="app" tabindex="-1"></main>
 
+  <nav class="tabbar" aria-label="Navegación inferior">
+    <a href="#/" data-route="" data-ic="home" data-size="22">Inicio</a>
+    <a href="#/aprender" data-route="aprender" data-ic="route" data-size="22">Aprender</a>
+    <a href="#/practicar" data-route="practicar" data-ic="target" data-size="22">Practicar</a>
+    <a href="#/examenes" data-route="examenes" data-ic="flag" data-size="22">Exámenes</a>
+    <a href="#/progreso" data-route="progreso" data-ic="chart" data-size="22">Progreso</a>
+  </nav>
+
   <footer class="footer">
-    <p>Proyecto personal de estudio · Contenido basado en el Reglamento General de Circulación y el temario DGT del permiso B. Comprueba siempre los datos oficiales en <a href="https://www.dgt.es" target="_blank" rel="noopener">dgt.es</a>.</p>
+    <p>Proyecto personal de estudio. Contenido basado en el Reglamento General de Circulación, el temario DGT del permiso B y los tests publicados por la <a href="https://revista.dgt.es/es/test/" target="_blank" rel="noopener">Revista DGT</a>. Comprueba siempre los datos oficiales en <a href="https://www.dgt.es" target="_blank" rel="noopener">dgt.es</a>. · <a href="#/valencia">Guía Comunitat Valenciana</a></p>
   </footer>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <canvas id="confetti" aria-hidden="true"></canvas>
 
-  <!-- Datos (cada fichero añade a variables globales; si falta alguno, la app sigue funcionando) -->
+  <!-- Datos: cada fichero añade a variables globales; si falta alguno, la app sigue funcionando -->
   <script src="data/teoria-examen.js"></script>
   <script src="data/teoria-via.js"></script>
   <script src="data/teoria-senales.js"></script>
@@ -62,20 +71,44 @@
   <script src="data/teoria-factores.js"></script>
   <script src="data/teoria-seguridad.js"></script>
   <script src="data/teoria-accidentes.js"></script>
+  <script src="data/teoria-normas.js"></script>
+  <script src="data/ampliacion-1.js"></script>
+  <script src="data/ampliacion-3.js"></script>
+  <script src="data/ampliacion-4.js"></script>
+  <script src="data/ampliacion-5.js"></script>
   <script src="data/preguntas-a.js"></script>
   <script src="data/preguntas-b.js"></script>
   <script src="data/preguntas-c.js"></script>
+  <script src="data/preguntas-d.js"></script>
+  <script src="data/preguntas-e.js"></script>
+  <script src="data/preguntas-f.js"></script>
+  <script src="data/preguntas-g.js"></script>
   <script src="data/preguntas-web.js"></script>
+  <script src="data/oficiales-a.js"></script>
+  <script src="data/oficiales-b.js"></script>
+  <script src="data/oficiales-c.js"></script>
+  <script src="data/diagramas-examen.js"></script>
+  <script src="data/diagramas-via.js"></script>
+  <script src="data/diagramas-senales.js"></script>
+  <script src="data/diagramas-velocidad.js"></script>
+  <script src="data/diagramas-prioridad.js"></script>
+  <script src="data/diagramas-maniobras.js"></script>
+  <script src="data/diagramas-alumbrado.js"></script>
+  <script src="data/diagramas-factores.js"></script>
+  <script src="data/diagramas-seguridad.js"></script>
+  <script src="data/diagramas-accidentes.js"></script>
   <script src="data/resumenes-1.js"></script>
   <script src="data/resumenes-2.js"></script>
   <script src="data/flashcards.js"></script>
   <script src="data/info-cv.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/cuenta.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/diagramas.js"></script>
   <script src="js/simuladores.js"></script>
   <script src="js/app.js"></script>
   <script>
-    if ("serviceWorker" in navigator && location.protocol.startsWith("http") && !/localhost|127\.0\.0\.1/.test(location.hostname)) {
-      navigator.serviceWorker.register("sw.js").catch(function () {});
-    }
+    if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("sw.js").catch(function () {});
   </script>
 </body>
 </html>

@@ -396,9 +396,9 @@ window.PREGUNTAS.push(
     id: "c-050",
     tema: "factores",
     pregunta: "Si te niegas a someterte a una prueba de alcoholemia o de drogas cuando te lo pide un agente, ¿qué ocurre?",
-    opciones: ["Nada, porque nadie puede obligarte a someterte a una prueba", "Es una infracción equivalente a dar positivo en la prueba", "Solo hay sanción si ya habías bebido alcohol antes"],
+    opciones: ["Nada, porque nadie puede obligarte a someterte a una prueba", "Cometes un delito castigado en el Código Penal", "Solo hay sanción si ya habías bebido alcohol antes"],
     correcta: 1,
-    explicacion: "Según la Ley de Tráfico, negarse a someterse a la prueba de alcoholemia o de drogas se sanciona como si el resultado hubiera sido positivo. Por eso, cuando te lo pidan, lo exigido es someterte a la prueba."
+    explicacion: "Negarse a las pruebas de alcohol o drogas que pide un agente es un **delito** (artículo 383 del Código Penal): prisión de 6 meses a 1 año y retirada del permiso de 1 a 4 años. Siempre debes someterte a la prueba."
   },
   {
     id: "c-051",

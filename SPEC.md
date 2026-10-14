@@ -18,6 +18,7 @@ Contenido basado en el Reglamento General de Circulación y el temario oficial D
 | `factores` | Alcohol, drogas, medicamentos, fatiga y distracciones |
 | `seguridad` | Seguridad activa/pasiva, cinturón, SRI, neumáticos, mecánica y documentación |
 | `accidentes` | Accidentes y primeros auxilios (PAS), condiciones adversas y conducción eficiente |
+| `normas` | Normas, sanciones y conducción preventiva |
 
 ## Formato TEORÍA — fichero `data/teoria-<id>.js`
 ```js

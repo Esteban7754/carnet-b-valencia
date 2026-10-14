@@ -1,0 +1,22 @@
+# Despliegue en Netlify: web estática, sin paso de compilación.
+# En Netlify: "Add new site" → "Import an existing project" → elige este repositorio. No hay que configurar nada más.
+[build]
+  publish = "."
+  command = "for f in js/*.js data/*.js; do node --check \"$f\" || exit 1; done"
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

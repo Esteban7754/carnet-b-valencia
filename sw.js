@@ -1,6 +1,6 @@
 // Service worker: la web funciona sin conexión una vez visitada.
 // Estrategia "network first": siempre intenta la versión nueva y, si no hay red, usa la caché.
-const CACHE = "carnet-b-v2";
+const CACHE = "carnet-b-v3";
 
 self.addEventListener("install", e => self.skipWaiting());
 self.addEventListener("activate", e => {

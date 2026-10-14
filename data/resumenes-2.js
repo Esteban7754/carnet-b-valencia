@@ -146,7 +146,7 @@ window.RESUMENES = Object.assign(window.RESUMENES || {}, {
   "seguridad-mantenimiento-carga": {
     emoji: "🧰",
     idea: "Unos minutos al mes revisando el coche evitan averías, igual que un chequeo médico te evita un susto grande.",
-    puntos: ["Testigo **rojo**: peligro, para. **Amarillo**: revisar pronto.", "Carga que sobresale: **bandera roja** de día, **luz roja** de noche.", "No superes las **plazas** ni la **masa máxima** (ficha técnica)."],
+    puntos: ["Testigo **rojo**: peligro, para. **Amarillo**: revisar pronto.", "Carga que sobresale: panel **V-20** y, de noche, **luz roja**.", "No superes las **plazas** ni la **masa máxima** (ficha técnica)."],
     recuerda: "**Testigo de aceite en rojo: para y apaga el motor.**"
   },
   "seguridad-documentacion-itv": {
